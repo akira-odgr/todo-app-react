@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+    --font-roboto: "Roboto", sans-serif;
+
+    --colorGradient1: #f9fafb;
+    --colorGradient2: #f3f4f6;
+    --colorGradient3: purple;
+    --colorGradient4: blue;
+}
+
+@layer base {
+    body {
+        font-family: var(--font-roboto);
+    }
+}
+
+@layer component {
+    .flex-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn {
+        background-color: #1e90ff;
+        color: #fff;
+        padding-inline: 1rem;
+        padding-block: 0.5rem;
+        border-radius: 0.5rem;
+        font-weight: 500;
+        transition: 0.3s;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #1171d1;
+        }
+    }
+
+    .btn-todo1 {
+        @apply px-4 py-2 text-white rounded-lg cursor-pointer;
+    }
+
+    .btn-todo2 {
+        @apply p-2 rounded-lg hover:bg-blue-50 duration-200 cursor-pointer;
+    }
+}
+
+@utility bg-gradient {
+    background-image: linear-gradient(
+        to bottom right,
+        var(--colorGradient1),
+        var(--colorGradient2)
+    );
+}
+
+@utility text-gradient {
+    background-image: linear-gradient(
+        to right,
+        var(--colorGradient3),
+        var(--colorGradient4)
+    );
+    background-clip: text;
+    color: transparent;
+}
