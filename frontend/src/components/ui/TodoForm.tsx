@@ -1,4 +1,4 @@
-import { FormEvent, type JSX } from "react";
+import { type FormEvent, type JSX } from "react";
 import { Button } from "./Button";
 
 interface TodoFormProps {
